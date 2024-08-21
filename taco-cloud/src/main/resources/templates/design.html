@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http:/ /www.w3.org/1999/xhtml" xmlns:th="http:/ /www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<title>Taco Cloud</title>
@@ -50,6 +50,10 @@
 		<div>
 			<h3>Name your taco creation:</h3>
 			<input type="text" th:field="*{name}" />
+			<span class="validationError"
+			th:if="${#fields.hasErrors('name')}"
+			th:errors="*{name}">Name Error</span>
+			
 			<br />
 			<button>Submit Your Taco</button>
 		</div>
